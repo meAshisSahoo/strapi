@@ -1,0 +1,50 @@
+{
+  "kind": "collectionType",
+  "collectionName": "employees",
+  "info": {
+    "singularName": "employee",
+    "pluralName": "employees",
+    "displayName": "employee",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "E_Name": {
+      "type": "string",
+      "unique": true,
+      "required": true
+    },
+    "E_Email": {
+      "type": "email",
+      "required": true,
+      "unique": true
+    },
+    "E_Phone": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "E_Age": {
+      "type": "string",
+      "unique": true,
+      "required": true
+    },
+    "E_Gender": {
+      "type": "string",
+      "required": true,
+      "unique": false
+    },
+    "company": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::company.company",
+      "inversedBy": "employees"
+    },
+    "E_Code": {
+      "type": "string"
+    }
+  }
+}
